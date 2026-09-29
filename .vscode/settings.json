@@ -1,0 +1,13 @@
+{
+  // Quebra visualmente as linhas longas na coluna 100 (não altera o arquivo)
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  // Mantém a indentação ao quebrar a linha
+  "editor.wrappingIndent": "indent",
+  // Linha-guia vertical na coluna 100
+  //"editor.rulers": [100],
+  // Organiza a indentação automaticamente ao salvar (Ctrl+S)
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "html.format.wrapLineLength": 100
+}
