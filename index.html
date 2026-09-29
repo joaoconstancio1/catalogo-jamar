@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jamar | Catálogo de Calçados</title>
+  <meta name="description"
+    content="Catálogo Jamar: sandálias e mules femininas. 54 anos de tradição. Numeração 35 ao 38.">
+  <meta property="og:title" content="Jamar | Catálogo de Calçados">
+  <meta property="og:description" content="54 anos de tradição. Veja os modelos e peça pelo WhatsApp.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="theme-color" content="#2B2622">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header class="bar">
+    <span class="logo">JAMAR</span>
+    <a class="cta" id="topCta" href="#">Fale conosco</a>
+  </header>
+
+  <section class="hero">
+    <img src="img/capa.webp" alt="Sandália Jamar Dakar Champagne em escadaria à beira-mar">
+    <div class="in">
+      <div class="eyebrow">Catálogo de calçados</div>
+      <h1>JAMAR</h1>
+      <div class="rule"></div>
+      <em>54 anos de tradição</em>
+      <div class="sizes">NUMERAÇÃO 35 AO 38</div>
+    </div>
+  </section>
+
+  <nav class="nav" id="nav"></nav>
+  <main id="list"></main>
+
+  <section class="how" id="comprar">
+    <div class="eyebrow">Jamar</div>
+    <h2>Como comprar</h2>
+    <div class="steps">
+      <div><b>01</b>
+        <h3>Escolha o modelo</h3>
+        <p>Navegue pelo catálogo e veja todas as fotos de cada modelo.</p>
+      </div>
+      <div><b>02</b>
+        <h3>Selecione a numeração</h3>
+        <p>Temos do 35 ao 38. Na dúvida, é só perguntar.</p>
+      </div>
+      <div><b>03</b>
+        <h3>Peça pelo WhatsApp</h3>
+        <p>Toque no botão verde: a mensagem já vai pronta com o modelo e o número.</p>
+      </div>
+    </div>
+    <a class="buy" id="howCta" href="#"></a>
+    <p class="tt">Também estamos no TikTok Shop</p>
+  </section>
+  <footer>54 ANOS DE TRADIÇÃO</footer>
+
+  <a class="fab" id="fab" href="#" aria-label="Falar no WhatsApp"></a>
+
+  <div class="lb" id="lb">
+    <button class="x" aria-label="Fechar">×</button>
+    <button class="p" aria-label="Anterior">‹</button>
+    <img alt="">
+    <button class="n" aria-label="Próxima">›</button>
+  </div>
+
+  <script src="produtos.js"></script>
+  <script>
+    const WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>';
+    const wa = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+    const geral = "Olá! Vi o catálogo Jamar e gostaria de mais informações.";
+
+    document.getElementById('topCta').href = wa(geral);
+    const fab = document.getElementById('fab'); fab.href = wa(geral); fab.innerHTML = WA_ICON;
+    const hc = document.getElementById('howCta'); hc.href = wa(geral); hc.innerHTML = WA_ICON + 'Chamar no WhatsApp';
+
+    const nav = document.getElementById('nav'), list = document.getElementById('list');
+    PRODUTOS.forEach(p => {
+      const fotos = [...Array(FOTOS_POR_MODELO)].map((_, i) => `img/${p.id}-${i + 1}.webp`);
+      nav.insertAdjacentHTML('beforeend', `<a href="#${p.id}">${p.nome}</a>`);
+      list.insertAdjacentHTML('beforeend', `
+  <article class="prod" id="${p.id}">
+    <div class="gal">
+      <div class="track">${fotos.map((f, i) => `<img src="${f}" alt="${p.nome} – foto ${i + 1}" loading="${i ? 'lazy' : 'eager'}" width="1000" height="1000">`).join('')}</div>
+      <button class="arrow l" aria-label="Foto anterior">‹</button><button class="arrow r" aria-label="Próxima foto">›</button>
+      <div class="dots">${fotos.map((_, i) => `<button aria-label="Foto ${i + 1}" class="${i ? '' : 'on'}"></button>`).join('')}</div>
+      <div class="thumbs">${fotos.map((f, i) => `<img src="${f}" alt="" loading="lazy" class="${i ? '' : 'on'}">`).join('')}</div>
+    </div>
+    <div class="info">
+      <div class="eyebrow">${p.tipo}</div>
+      <h2>${p.nome}</h2>
+      <div class="price">${p.preco}</div>
+      <p class="desc">${p.desc}</p>
+      <div class="lbl">Numeração</div>
+      <div class="sz">${TAMANHOS.map(t => `<button>${t}</button>`).join('')}</div>
+      <a class="buy" target="_blank" rel="noopener">${WA_ICON}Pedir pelo WhatsApp</a>
+      <p class="hint">Selecione a numeração e toque em pedir.</p>
+    </div>
+  </article>`);
+      const el = document.getElementById(p.id), track = el.querySelector('.track');
+      const dots = [...el.querySelectorAll('.dots button')], th = [...el.querySelectorAll('.thumbs img')];
+      const go = i => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      const cur = () => Math.round(track.scrollLeft / track.clientWidth);
+      track.addEventListener('scroll', () => { const c = cur(); dots.forEach((d, i) => d.classList.toggle('on', i === c)); th.forEach((d, i) => d.classList.toggle('on', i === c)) }, { passive: true });
+      dots.forEach((d, i) => d.onclick = () => go(i)); th.forEach((d, i) => d.onclick = () => go(i));
+      el.querySelector('.arrow.l').onclick = () => go(Math.max(0, cur() - 1));
+      el.querySelector('.arrow.r').onclick = () => go(Math.min(fotos.length - 1, cur() + 1));
+      track.querySelectorAll('img').forEach((im, i) => im.onclick = () => openLb(fotos, i));
+      let tam = null; const buy = el.querySelector('.buy'), hint = el.querySelector('.hint');
+      const upd = () => {
+        buy.href = wa(`Olá! Tenho interesse na ${p.nome} (${p.preco})` + (tam ? `, numeração ${tam}.` : '. Qual numeração tem disponível?'));
+        hint.textContent = tam ? `Numeração ${tam} selecionada.` : 'Selecione a numeração e toque em pedir.'
+      };
+      el.querySelectorAll('.sz button').forEach(b => b.onclick = () => {
+        tam = tam === b.textContent ? null : b.textContent;
+        el.querySelectorAll('.sz button').forEach(x => x.classList.toggle('on', x.textContent === tam)); upd()
+      });
+      upd();
+    });
+
+    const lb = document.getElementById('lb'), lbi = lb.querySelector('img'); let lf = [], li = 0;
+    function openLb(f, i) { lf = f; li = i; lbi.src = f[i]; lb.classList.add('open') }
+    const mv = d => { li = (li + d + lf.length) % lf.length; lbi.src = lf[li] };
+    lb.querySelector('.x').onclick = () => lb.classList.remove('open');
+    lb.querySelector('.p').onclick = () => mv(-1); lb.querySelector('.n').onclick = () => mv(1);
+    lb.onclick = e => { if (e.target === lb) lb.classList.remove('open') };
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') lb.classList.remove('open'); if (e.key === 'ArrowLeft') mv(-1); if (e.key === 'ArrowRight') mv(1)
+    });
+  </script>
+</body>
+
+</html>
