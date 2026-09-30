@@ -5,7 +5,7 @@
    ===================================================== */
 
 /* WhatsApp: só números, com 55 + DDD. Ex.: 5511987654321 */
-const WHATSAPP = "5517991649956";
+const WHATSAPP = "5517991055655";
 
 /* Numerações que aparecem para escolher */
 const TAMANHOS = ["35", "36", "37", "38"];
