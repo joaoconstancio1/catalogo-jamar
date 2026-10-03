@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jamar | Catálogo de Calçados</title>
   <meta name="description"
-    content="Catálogo Jamar: sandálias e tamancos femininos. 54 anos de tradição. Numeração 35 ao 38.">
+    content="Catálogo Jamar: sandálias, tamancos e sapatilhas femininas. 54 anos de tradição. Numeração 35 ao 38.">
   <meta property="og:title" content="Jamar | Catálogo de Calçados">
   <meta property="og:description"
     content="54 anos de tradição. Veja os modelos e peça pelo WhatsApp.">
@@ -84,7 +84,7 @@
 
     const nav = document.getElementById('nav'), list = document.getElementById('list');
     PRODUTOS.forEach(p => {
-      const fotos = [...Array(FOTOS_POR_MODELO)].map((_, i) => `img/${p.id}-${i + 1}.webp`);
+      const fotos = [...Array(p.fotos || FOTOS_POR_MODELO)].map((_, i) => `img/${p.id}-${i + 1}.webp`);
       nav.insertAdjacentHTML('beforeend', `<a href="#${p.id}">${p.curto || p.nome}</a>`);
       list.insertAdjacentHTML('beforeend', `
   <article class="prod" id="${p.id}">

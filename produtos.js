@@ -20,6 +20,7 @@ const FOTOS_POR_MODELO = 7;
    curto: nome curto que aparece nos botões do topo
    ref:   referência da etiqueta da caixa / nota
    preco: texto que aparece no site
+   fotos: (opcional) quantas fotos, se for diferente de FOTOS_POR_MODELO
    Para adicionar um modelo, copie um bloco inteiro e cole abaixo. */
 const PRODUTOS = [
   {
@@ -55,6 +56,23 @@ const PRODUTOS = [
     desc: "Tiras cruzadas em metalizado champagne e fivela ajustável. Elegante e leve, combina do passeio de verão ao happy hour."
   },
   {
+    id: "dakar-ouro-saltinho",
+    nome: "Sandália Saltinho Dakar Ouro",
+    curto: "Saltinho Dakar Ouro",
+    ref: "21-3548",
+    preco: "R$ 166,90",
+    desc: "Dourado metalizado com laço na frente e duas contas douradas polidas na tira. Saltinho baixo e confortável, com fivela no tornozelo — luz e elegância para o verão, viagens e almoços especiais."
+  },
+  {
+    id: "dakar-ouro-salto",
+    nome: "Sandália Salto Dakar Ouro",
+    curto: "Salto Dakar Ouro",
+    ref: "64-3779",
+    preco: "R$ 186,90",
+    fotos: 6,
+    desc: "Dourado metalizado com laço frontal e salto bloco firme de altura média. Elegante e estável, perfeita para festas, casamentos e eventos ao entardecer."
+  },
+  {
     id: "dakar-ouro-fivela", // fotos da Sandália Salto Cromado (68-3773)
     nome: "Sandália Salto Cromado Dakar Ouro",
     curto: "Salto Cromado Dakar Ouro",
@@ -69,5 +87,29 @@ const PRODUTOS = [
     ref: "68-3699",
     preco: "R$ 199,90",
     desc: "Tamanco em dourado metalizado com salto escultural cromado. Uma peça de destaque, que eleva qualquer produção — do vestido de festa ao look de alfaiataria."
+  },
+  {
+    id: "francesa-amendoa",
+    nome: "Sapatilha Boneca Perfurado Francesa Amêndoa",
+    curto: "Francesa Amêndoa",
+    ref: "15-3845",
+    preco: "R$ 166,90",
+    desc: "Sapatilha boneca de bico fino, toda perfurada, no tom amêndoa. Tira Mary Jane com tachas douradas espelhadas. Leve e delicada para passeios, trabalho e dias de sol."
+  },
+  {
+    id: "renda-terra",
+    nome: "Sapatilha Boneca Renda Tropical Terra",
+    curto: "Renda Terra",
+    ref: "15-3865",
+    preco: "R$ 174,90",
+    desc: "Renda delicada no tom terra, com bico fino e tira Mary Jane cravejada de tachas douradas. Romântica e sofisticada para jantares, encontros e o dia a dia com charme."
+  },
+  {
+    id: "tela-mocha",
+    nome: "Sapatilha Boneca Tela Majestic Mocha Mousse",
+    curto: "Tela Mocha Mousse",
+    ref: "15-3864",
+    preco: "R$ 174,90",
+    desc: "Tela perfurada no tom mocha mousse, bico fino e tira Mary Jane com tachas douradas. Confortável e elegante para o trabalho, viagens e passeios."
   },
 ];
